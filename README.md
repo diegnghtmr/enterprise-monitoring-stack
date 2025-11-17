@@ -10,7 +10,7 @@
 
 - **Diego Flores** - diegoa.floresq@uqvirtual.edu.co
 - **Juan Pablo Mora** - juanp.morar@uqvirtual.edu.co
-- **Edwin Viña** - edwin.viñar@uqvirtual.edu.co
+- **Edwin Viña** - edwin.vinar@uqvirtual.edu.co
 
 ### Resumen Ejecutivo
 
