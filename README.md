@@ -865,7 +865,7 @@ La implementación exitosa del proyecto demuestra la viabilidad y beneficios de 
 ### Anexo A: Estructura del Repositorio Git
 
 ```
-proyecto-infraestructura/
+enterprise-monitoring-stack/
 │
 ├── README.md                    # Este documento│
 ├── docs/                       # Documentación adicional
