@@ -694,7 +694,7 @@ La solución implementada presenta una arquitectura robusta con múltiples capas
 
 ---
 
-## Conclusiones
+## Conclusiones Técnicas
 
 La implementación exitosa del proyecto demuestra la viabilidad y beneficios de la consolidación de servicios mediante virtualización con contenedores. Los objetivos planteados fueron alcanzados en su totalidad, logrando una infraestructura robusta, escalable y con alta disponibilidad.
 
@@ -719,18 +719,6 @@ La implementación exitosa del proyecto demuestra la viabilidad y beneficios de 
 3. **Balance Recursos-Rendimiento:** La asignación de recursos debe equilibrar rendimiento con eficiencia
 
 4. **Monitorización Proactiva:** La detección temprana de problemas reduce significativamente el tiempo de resolución
-
-### Recomendaciones para Implementación en Producción
-
-1. **Hardware Dedicado:** Utilizar servidores con controladoras RAID hardware para mejor rendimiento
-
-2. **Backups Automatizados:** Implementar políticas de backup automático con verificación de integridad
-
-3. **Alta Disponibilidad:** Considerar Docker Swarm o Kubernetes para orquestación en múltiples nodos
-
-4. **Seguridad Reforzada:** Implementar SELinux/AppArmor, firewalls y segmentación de red
-
-5. **Documentación Continua:** Mantener actualizada la documentación con cada cambio en la infraestructura
 
 ---
 
