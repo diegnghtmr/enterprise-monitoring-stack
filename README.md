@@ -248,7 +248,7 @@ echo "/dev/vg_nginx/lv_nginx /srv/nginx_data ext4 defaults 0 2" | sudo tee -a /e
 
 ### 3.1 Creación de Imagen Personalizada para Nginx
 
-Se desarrolló un Dockerfile personalizado para Nginx que se encuentra ubicado en el repositorio en la ruta `Dockerfiles/Dockerfile_nginx`. Este archivo define la configuración de la imagen personalizada basada en nginx:stable, incluyendo el mantenedor del proyecto y la generación de una página HTML estática directamente en la imagen.
+Se desarrolló un Dockerfile personalizado para Nginx que se encuentra ubicado en el repositorio en la ruta `dockerfiles/dockerfile_nginx`. Este archivo define la configuración de la imagen personalizada basada en nginx:stable, incluyendo el mantenedor del proyecto y la generación de una página HTML estática directamente en la imagen.
 
 El Dockerfile implementado contiene las siguientes características:
 - Imagen base nginx:stable para estabilidad en producción
@@ -257,7 +257,7 @@ El Dockerfile implementado contiene las siguientes características:
 - Generación automática de un archivo index.html personalizado mediante comando RUN
 
 ![Dockerfile de Nginx](images/4.png)
-*Figura 13: Dockerfile personalizado para el contenedor Nginx ubicado en Dockerfiles/Dockerfile_nginx*
+*Figura 13: Dockerfile personalizado para el contenedor Nginx ubicado en dockerfiles/dockerfile_nginx*
 
 La página HTML se genera dinámicamente durante la construcción de la imagen, asegurando que cada contenedor tenga una página inicial funcional que demuestra el correcto funcionamiento del servicio Nginx personalizado.
 
@@ -265,7 +265,7 @@ La página HTML se genera dinámicamente durante la construcción de la imagen, 
 
 ```bash
 # Construcción de la imagen desde el directorio del proyecto
-sudo docker build -t mi_nginx:1.0 -f Dockerfiles/Dockerfile_nginx .
+sudo docker build -t mi_nginx:1.0 -f dockerfiles/dockerfile_nginx .
 
 # Ejecución del contenedor con volumen persistente
 sudo docker run -d \
@@ -295,7 +295,7 @@ Parámetros del comando docker run:
 
 ### 3.3 Creación de Imagen Personalizada para Apache
 
-El Dockerfile para Apache HTTP Server se encuentra en el repositorio bajo la ruta `Dockerfiles/Dockerfile_apache`. Este archivo utiliza la imagen base httpd:2.4 y configura el servidor web con las especificaciones del proyecto.
+El Dockerfile para Apache HTTP Server se encuentra en el repositorio bajo la ruta `dockerfiles/dockerfile_apache`. Este archivo utiliza la imagen base httpd:2.4 y configura el servidor web con las especificaciones del proyecto.
 
 Características del Dockerfile implementado:
 - Utilización de la imagen oficial httpd:2.4 para garantizar compatibilidad
@@ -304,13 +304,13 @@ Características del Dockerfile implementado:
 - Copia del archivo index.html personalizado desde el directorio html/
 
 ![Dockerfile de Apache](images/5.png)
-*Figura 16: Dockerfile personalizado para el contenedor Apache ubicado en Dockerfiles/Dockerfile_apache*
+*Figura 16: Dockerfile personalizado para el contenedor Apache ubicado en dockerfiles/dockerfile_apache*
 
 ### 3.4 Construcción y Ejecución del Contenedor Apache
 
 ```bash
 # Construcción de la imagen Apache desde el directorio del proyecto
-sudo docker build -t mi_apache:1.0 -f Dockerfiles/Dockerfile_apache .
+sudo docker build -t mi_apache:1.0 -f dockerfiles/dockerfile_apache .
 
 # Ejecución del contenedor Apache
 sudo docker run -d \
@@ -332,7 +332,7 @@ curl http://localhost:8080
 
 ### 3.5 Creación de Imagen Personalizada para MySQL
 
-El Dockerfile para MySQL se encuentra en el repositorio en la ubicación `Dockerfiles/Dockerfile_mysql`. Este archivo configura una instancia de MySQL 8.0 con las especificaciones requeridas para el proyecto, incluyendo la base de datos inicial y las credenciales necesarias.
+El Dockerfile para MySQL se encuentra en el repositorio en la ubicación `dockerfiles/dockerfile_mysql`. Este archivo configura una instancia de MySQL 8.0 con las especificaciones requeridas para el proyecto, incluyendo la base de datos inicial y las credenciales necesarias.
 
 Configuración implementada en el Dockerfile:
 - Imagen base mysql:8.0 para estabilidad y características avanzadas
@@ -344,13 +344,13 @@ Configuración implementada en el Dockerfile:
 El script init.sql referenciado en el Dockerfile contiene la estructura inicial de la base de datos, incluyendo la creación de tablas y la inserción de datos de prueba para validar el funcionamiento del sistema.
 
 ![Dockerfile de MySQL](images/6.png)
-*Figura 19: Dockerfile y configuración de MySQL ubicado en Dockerfiles/Dockerfile_mysql*
+*Figura 19: Dockerfile y configuración de MySQL ubicado en dockerfiles/dockerfile_mysql*
 
 ### 3.6 Construcción y Ejecución del Contenedor MySQL
 
 ```bash
 # Construcción de la imagen MySQL desde el directorio del proyecto
-sudo docker build -t mi_mysql:1.0 -f Dockerfiles/Dockerfile_mysql .
+sudo docker build -t mi_mysql:1.0 -f dockerfiles/dockerfile_mysql .
 
 # Ejecución del contenedor MySQL
 sudo docker run -d \
@@ -558,7 +558,7 @@ version: '3.8'
 services:
   apache:
     build:
-      context: ./Dockerfiles/apache
+      context: ./dockerfiles/apache
     container_name: apache
     ports:
       - "8080:80"
@@ -568,7 +568,7 @@ services:
 
   nginx:
     build:
-      context: ./Dockerfiles/nginx
+      context: ./dockerfiles/nginx
     container_name: nginx
     ports:
       - "8081:80"
@@ -578,7 +578,7 @@ services:
 
   mysql:
     build:
-      context: ./Dockerfiles/mysql
+      context: ./dockerfiles/mysql
     container_name: mysql
     ports:
       - "3306:3306"
@@ -783,7 +783,7 @@ tail -f /srv/mysql_data/[hostname].err
 
 ✅ **Virtualización y Contenedores**
 - [x] Creación de 3 contenedores Docker (Apache, MySQL, Nginx)
-- [x] Imágenes personalizadas con Dockerfiles
+- [x] Imágenes personalizadas con dockerfiles
 - [x] Servicios funcionales y accesibles
 
 ✅ **Almacenamiento RAID y LVM**
