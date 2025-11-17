@@ -690,31 +690,6 @@ sudo lvremove -f /dev/vg_mysql/lv_mysql_snap
 sudo lvremove -f /dev/vg_nginx/lv_nginx_snap
 ```
 
-### Monitoreo de Estado de RAID
-
-```bash
-# Script de monitoreo automático
-#!/bin/bash
-# check_raid_status.sh
-
-RAID_DEVICES="/dev/md0 /dev/md1 /dev/md2"
-LOG_FILE="/var/log/raid_status.log"
-
-for device in $RAID_DEVICES; do
-    STATUS=$(sudo mdadm --detail $device | grep "State :" | awk '{print $3}')
-    if [ "$STATUS" != "clean" ] && [ "$STATUS" != "active" ]; then
-        echo "[$(date)] WARNING: $device is in state: $STATUS" | tee -a $LOG_FILE
-        # Enviar alerta por email o sistema de notificaciones
-    fi
-done
-
-# Verificar discos fallidos
-FAILED=$(cat /proc/mdstat | grep -c "\[F\]")
-if [ $FAILED -gt 0 ]; then
-    echo "[$(date)] CRITICAL: Detected $FAILED failed disk(s)" | tee -a $LOG_FILE
-fi
-```
-
 ### Actualización de Contenedores
 
 ```bash
