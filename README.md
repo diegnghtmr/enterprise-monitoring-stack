@@ -869,7 +869,7 @@ proyecto-infraestructura/
 │
 ├── README.md                    # Este documento│
 ├── docs/                       # Documentación adicional
-│   ├── docker-compose.yml      # Orquestación de contenedores
+│   └── docker-compose.yml      # Orquestación de contenedores
 │
 ├── images/                     # Capturas de pantalla
 │   ├── 0.png
