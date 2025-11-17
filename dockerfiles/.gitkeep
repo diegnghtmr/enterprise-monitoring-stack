@@ -1,0 +1,3 @@
+# Dockerfiles directory
+
+This directory contains Dockerfile and Containerfile definitions for building custom images.
