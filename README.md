@@ -867,7 +867,7 @@ La implementación exitosa del proyecto demuestra la viabilidad y beneficios de 
 ```
 enterprise-monitoring-stack/
 │
-├── README.md                    # Este documento│
+├── README.md                   # Este documento
 ├── docs/                       # Documentación adicional
 │   └── docker-compose.yml      # Orquestación de contenedores
 │
