@@ -9,8 +9,8 @@
 ### Integrantes
 
 - **Diego Flores** - diegoa.floresq@uqvirtual.edu.co
-- **Juan Pablo Mora** - juanp.morar@uqvirtual.edu.co
 - **Edwin Viña** - edwin.vinar@uqvirtual.edu.co
+- **Juan Pablo Mora** - juanp.morar@uqvirtual.edu.co
 
 ### Resumen Ejecutivo
 
@@ -32,7 +32,7 @@ Implementar una solución de virtualización basada en contenedores Docker en un
 
 ---
 
-## Día 1: Configuración Inicial del Servidor y Preparación del Entorno
+## 1. Configuración Inicial del Servidor y Preparación del Entorno
 
 ### 1.1 Instalación del Sistema Base
 
@@ -75,14 +75,14 @@ lsblk
 *Figura 3: Salida del comando lsblk mostrando la estructura completa de dispositivos de bloque*
 
 La salida del comando confirmó el reconocimiento exitoso de:
-- **sda:** Disco del sistema operativo (20 GB)
+- **sda:** Disco del sistema operativo (50 GB)
 - **sdb hasta sdj:** Nueve discos sin particionar de 5 GB cada uno
 
 Esta verificación asegura que el kernel detecta correctamente todos los dispositivos de almacenamiento, requisito fundamental para proceder con la configuración de los arreglos RAID.
 
 ---
 
-## Día 2: Configuración de RAID y LVM
+## 2. Configuración de RAID y LVM
 
 ### 2.1 Instalación de Herramientas de Gestión de Almacenamiento
 
@@ -244,7 +244,7 @@ echo "/dev/vg_nginx/lv_nginx /srv/nginx_data ext4 defaults 0 2" | sudo tee -a /e
 
 ---
 
-## Día 3: Creación y Despliegue de Contenedores Docker
+## 3. Creación y Despliegue de Contenedores Docker
 
 ### 3.1 Creación de Imagen Personalizada para Nginx
 
@@ -383,7 +383,7 @@ SELECT * FROM prueba;
 
 ---
 
-## Día 4: Pruebas de Persistencia de Datos
+## 4. Pruebas de Persistencia de Datos
 
 ### 4.1 Validación de Persistencia en Apache
 
@@ -466,7 +466,7 @@ Los resultados demuestran que todos los registros insertados permanecen en la ba
 
 ---
 
-## Día 5: Implementación de Monitorización con Netdata
+## 5. Implementación de Monitorización con Netdata
 
 ### 5.1 Despliegue de Netdata Contenerizado
 
@@ -548,7 +548,7 @@ La monitorización confirma el funcionamiento correcto de los tres contenedores 
 
 ---
 
-## Configuración de Docker Compose (Opcional)
+## Configuración de Docker Compose
 
 Para facilitar el despliegue y gestión de los contenedores, se creó un archivo `docker-compose.yml`:
 
@@ -905,14 +905,6 @@ La implementación exitosa del proyecto demuestra la viabilidad y beneficios de 
 
 5. **Documentación Continua:** Mantener actualizada la documentación con cada cambio en la infraestructura
 
-### Proyección Futura
-
-La arquitectura implementada sienta las bases para evolucionar hacia:
-- Orquestación con Kubernetes para escalamiento automático
-- Integración con CI/CD para despliegues automatizados
-- Implementación de service mesh para comunicación entre microservicios
-- Adopción de GitOps para gestión declarativa de la infraestructura
-
 ---
 
 ## Referencias Técnicas
@@ -982,13 +974,9 @@ echo "Infraestructura base instalada exitosamente!"
 ```
 proyecto-infraestructura/
 │
-├── README.md                    # Este documento
-├── docker-compose.yml          # Orquestación de contenedores
-│
+├── README.md                    # Este documento│
 ├── docs/                       # Documentación adicional
-│   ├── arquitectura.md
-│   ├── troubleshooting.md
-│   └── mantenimiento.md
+│   ├── docker-compose.yml      # Orquestación de contenedores
 │
 ├── images/                     # Capturas de pantalla
 │   ├── 0.png
@@ -1021,24 +1009,16 @@ proyecto-infraestructura/
 │   ├── 8.2.png
 │   └── 8.3.png
 │
-├── Dockerfiles/                # Archivos Docker del proyecto
-│   ├── Dockerfile_apache       # Configuración contenedor Apache
-│   ├── Dockerfile_nginx        # Configuración contenedor Nginx
-│   ├── Dockerfile_mysql        # Configuración contenedor MySQL
-│   ├── init.sql               # Script de inicialización MySQL
-│   └── html/
-│       └── index.html         # Página HTML para Apache
-│
-└── scripts/                    # Scripts de utilidad
-    ├── install_infrastructure.sh
-    ├── backup_volumes.sh
-    ├── check_raid_status.sh
-    └── update_containers.sh
+└── Dockerfiles/                # Archivos Docker del proyecto
+    ├── Dockerfile_apache       # Configuración contenedor Apache
+    ├── Dockerfile_nginx        # Configuración contenedor Nginx
+    └── Dockerfile_mysql        # Configuración contenedor MySQL
+
 ```
 
 ---
 
-**Fecha de Finalización:** Noviembre 2024  
+**Fecha de Finalización:** Noviembre 2025  
 **Universidad del Quindío**  
 **Programa de Ingeniería de Sistemas y Computación**  
 **Asignatura:** Infraestructura Computacional
