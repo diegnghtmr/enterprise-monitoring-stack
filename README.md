@@ -887,56 +887,7 @@ La implementación exitosa del proyecto demuestra la viabilidad y beneficios de 
 
 ## Anexos
 
-### Anexo A: Script de Instalación Completa
-
-```bash
-#!/bin/bash
-# install_infrastructure.sh
-# Script completo de instalación del proyecto
-
-set -e  # Salir si hay errores
-
-echo "=== Instalación de Infraestructura Computacional ==="
-
-# Actualización del sistema
-echo "Actualizando sistema..."
-sudo apt update && sudo apt upgrade -y
-
-# Instalación de herramientas
-echo "Instalando herramientas necesarias..."
-sudo apt install -y mdadm lvm2 docker.io docker-compose
-
-# Creación de RAID
-echo "Creando arreglos RAID..."
-sudo mdadm --create /dev/md0 --level=1 --raid-devices=3 /dev/sdb /dev/sdc /dev/sdd
-sudo mdadm --create /dev/md1 --level=1 --raid-devices=3 /dev/sde /dev/sdf /dev/sdg
-sudo mdadm --create /dev/md2 --level=1 --raid-devices=3 /dev/sdh /dev/sdi /dev/sdj
-
-# Configuración de LVM
-echo "Configurando LVM..."
-sudo pvcreate /dev/md0 /dev/md1 /dev/md2
-sudo vgcreate vg_apache /dev/md0
-sudo vgcreate vg_mysql /dev/md1
-sudo vgcreate vg_nginx /dev/md2
-sudo lvcreate -n lv_apache -l 100%FREE vg_apache
-sudo lvcreate -n lv_mysql -l 100%FREE vg_mysql
-sudo lvcreate -n lv_nginx -l 100%FREE vg_nginx
-
-# Formateo y montaje
-echo "Formateando y montando volúmenes..."
-sudo mkfs.ext4 /dev/vg_apache/lv_apache
-sudo mkfs.ext4 /dev/vg_mysql/lv_mysql
-sudo mkfs.ext4 /dev/vg_nginx/lv_nginx
-
-sudo mkdir -p /srv/{apache_data,mysql_data,nginx_data}
-sudo mount /dev/vg_apache/lv_apache /srv/apache_data
-sudo mount /dev/vg_mysql/lv_mysql /srv/mysql_data
-sudo mount /dev/vg_nginx/lv_nginx /srv/nginx_data
-
-echo "Infraestructura base instalada exitosamente!"
-```
-
-### Anexo B: Estructura del Repositorio Git
+### Anexo A: Estructura del Repositorio Git
 
 ```
 proyecto-infraestructura/
@@ -977,9 +928,9 @@ proyecto-infraestructura/
 │   └── 8.3.png
 │
 └── Dockerfiles/                # Archivos Docker del proyecto
-    ├── Dockerfile_apache       # Configuración contenedor Apache
-    ├── Dockerfile_nginx        # Configuración contenedor Nginx
-    └── Dockerfile_mysql        # Configuración contenedor MySQL
+    ├── dockerfile_apache       # Configuración contenedor Apache
+    ├── dockerfile_nginx        # Configuración contenedor Nginx
+    └── dockerfile_mysql        # Configuración contenedor MySQL
 
 ```
 
