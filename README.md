@@ -902,7 +902,7 @@ proyecto-infraestructura/
 │   ├── 8.2.png
 │   └── 8.3.png
 │
-└── Dockerfiles/                # Archivos Docker del proyecto
+└── dockerfiles/                # Archivos Docker del proyecto
     ├── dockerfile_apache       # Configuración contenedor Apache
     ├── dockerfile_nginx        # Configuración contenedor Nginx
     └── dockerfile_mysql        # Configuración contenedor MySQL
