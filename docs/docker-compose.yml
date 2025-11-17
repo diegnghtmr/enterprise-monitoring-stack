@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  apache:
+    build:
+      context: ./Dockerfiles/apache
+    container_name: apache
+    ports:
+      - "8080:80"
+    volumes:
+      - /srv/apache_data:/usr/local/apache2/htdocs
+    restart: unless-stopped
+
+  nginx:
+    build:
+      context: ./Dockerfiles/nginx
+    container_name: nginx
+    ports:
+      - "8081:80"
+    volumes:
+      - /srv/nginx_data:/usr/share/nginx/html
+    restart: unless-stopped
+
+  mysql:
+    build:
+      context: ./Dockerfiles/mysql
+    container_name: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: proyecto_db
+    volumes:
+      - /srv/mysql_data:/var/lib/mysql
+    restart: unless-stopped
+
+  netdata:
+    image: netdata/netdata
+    container_name: netdata
+    hostname: monitor.local
+    ports:
+      - "19999:19999"
+    cap_add:
+      - SYS_PTRACE
+      - SYS_ADMIN
+    security_opt:
+      - apparmor:unconfined
+    volumes:
+      - /etc/passwd:/host/etc/passwd:ro
+      - /etc/group:/host/etc/group:ro
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /etc/os-release:/host/etc/os-release:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - netdata_lib:/var/lib/netdata
+      - netdata_cache:/var/cache/netdata
+    restart: unless-stopped
+
+volumes:
+  netdata_lib:
+  netdata_cache:
