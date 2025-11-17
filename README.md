@@ -835,7 +835,7 @@ tail -f /srv/mysql_data/[hostname].err
 
 ---
 
-## Conclusiones Técnicas
+## Conclusiones
 
 La implementación exitosa del proyecto demuestra la viabilidad y beneficios de la consolidación de servicios mediante virtualización con contenedores. Los objetivos planteados fueron alcanzados en su totalidad, logrando una infraestructura robusta, escalable y con alta disponibilidad.
 
@@ -877,12 +877,11 @@ La implementación exitosa del proyecto demuestra la viabilidad y beneficios de 
 
 ## Referencias Técnicas
 
-- Docker Documentation. (2024). *Docker Engine overview*. https://docs.docker.com/engine/
-- Red Hat. (2024). *LVM Administrator Guide*. https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_logical_volumes/index
-- The Linux Documentation Project. (2024). *Software-RAID HOWTO*. https://raid.wiki.kernel.org/index.php/Linux_Raid
-- Netdata. (2024). *Netdata Documentation*. https://learn.netdata.cloud/docs/
-- Ubuntu. (2024). *Ubuntu 22.04 LTS Server Guide*. https://ubuntu.com/server/docs
-- Omakub. (2024). *Omakub Configuration for Development*. https://omakub.org/
+- Docker Documentation. *Docker Engine overview*. https://docs.docker.com/engine/
+- Red Hat. *LVM Administrator Guide*. https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_logical_volumes/index
+- Netdata. *Netdata Documentation*. https://learn.netdata.cloud/docs/
+- Ubuntu. *Ubuntu 22.04 LTS Server Guide*. https://ubuntu.com/server/docs
+- Omakub. *Omakub Configuration for Development*. https://omakub.org/
 
 ---
 
