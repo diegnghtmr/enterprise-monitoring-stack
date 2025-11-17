@@ -1,0 +1,7 @@
+FROM httpd:2.4
+
+LABEL maintainer="Diego Flores, Juan Pablo Mora, Edwin Viña <diegoa.floresq@uqvirtual.edu.co, juanp.morar@uqvirtual.edu.co, edwin.viñar@uqvirtual.edu.co>"
+
+VOLUME ["/usr/local/apache2/htdocs"]
+
+COPY html/index.html /usr/local/apache2/htdocs/index.html

@@ -1,0 +1,7 @@
+FROM nginx:stable
+
+LABEL maintainer="Diego Flores, Juan Pablo Mora, Edwin Viña <diegoa.floresq@uqvirtual.edu.co, juanp.morar@uqvirtual.edu.co, edwin.viñar@uqvirtual.edu.co>"
+
+VOLUME ["/usr/share/nginx/html"]
+
+RUN echo '<!DOCTYPE html><html><head><title>Nginx - Proyecto Final</title></head><body><h1>Nginx: imagen personalizada funcionando</h1></body></html>' > /usr/share/nginx/html/index.html

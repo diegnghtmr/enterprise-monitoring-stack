@@ -1,0 +1,10 @@
+FROM mysql:8.0
+
+LABEL maintainer="Diego Flores, Juan Pablo Mora, Edwin Viña <diegoa.floresq@uqvirtual.edu.co, juanp.morar@uqvirtual.edu.co, edwin.viñar@uqvirtual.edu.co>"
+
+ENV MYSQL_ROOT_PASSWORD=rootpass
+ENV MYSQL_DATABASE=proyecto_db
+
+VOLUME ["/var/lib/mysql"]
+
+COPY init.sql /docker-entrypoint-initdb.d/init.sql
