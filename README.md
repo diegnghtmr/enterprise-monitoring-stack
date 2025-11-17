@@ -22,7 +22,7 @@ El presente proyecto documenta la implementación de una solución integral de v
 Implementar una solución de virtualización basada en contenedores Docker en un servidor centralizado, permitiendo el despliegue de servicios fundamentales de la organización con almacenamiento confiable mediante RAID y LVM.
 
 #### Objetivos Específicos
-- Configurar un entorno virtualizado con Ubuntu Server 22.04.5 LTS
+- Configurar un entorno virtualizado con Ubuntu Server 24.04.3 LTS
 - Implementar tres arreglos RAID 1 para redundancia de datos
 - Configurar LVM sobre cada arreglo RAID para gestión flexible del almacenamiento
 - Desplegar contenedores Docker con servicios Apache, Nginx y MySQL
@@ -39,7 +39,7 @@ Implementar una solución de virtualización basada en contenedores Docker en un
 Se procedió a la instalación y configuración de una máquina virtual utilizando **Oracle VirtualBox** como hipervisor. La selección de Oracle VirtualBox se fundamentó en su robustez, compatibilidad multiplataforma y capacidades avanzadas de gestión de almacenamiento virtual.
 
 #### Especificaciones del Sistema Virtualizado:
-- **Sistema Operativo:** Ubuntu 22.04.5 LTS (Jammy Jellyfish)
+- **Sistema Operativo:** Ubuntu 24.04.3 LTS (Jammy Jellyfish)
 - **Arquitectura:** x86_64
 - **Configuración Base:** Omakub de DHH (optimizada para desarrollo)
 - **Memoria RAM Asignada:** 6 GB
@@ -48,7 +48,7 @@ Se procedió a la instalación y configuración de una máquina virtual utilizan
 ![Máquina virtual con Ubuntu y configuración Omakub](images/0.png)
 *Figura 1: Entorno virtualizado con Ubuntu 22.04.5 LTS y configuración Omakub de DHH*
 
-La elección de Ubuntu 22.04.5 LTS responde a criterios de estabilidad empresarial, soporte extendido (LTS - Long Term Support) hasta abril de 2027, y amplia compatibilidad con tecnologías de contenedores. La configuración Omakub proporciona un entorno optimizado con herramientas esenciales preconfiguradas, acelerando el proceso de desarrollo y administración.
+La elección de Ubuntu 24.04.3 LTS responde a criterios de estabilidad empresarial, soporte extendido (LTS - Long Term Support) hasta abril de 2029, y amplia compatibilidad con tecnologías de contenedores. La configuración Omakub proporciona un entorno optimizado con herramientas esenciales preconfiguradas, acelerando el proceso de desarrollo y administración.
 
 ### 1.2 Creación de Discos Virtuales
 
