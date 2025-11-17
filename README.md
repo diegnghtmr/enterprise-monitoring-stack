@@ -747,38 +747,6 @@ docker exec mysql mysql -uroot -prootpassword -e "SELECT 1"
 
 ---
 
-## Métricas de Rendimiento
-
-### Baseline de Rendimiento Establecido
-
-Durante las pruebas se establecieron las siguientes métricas base:
-
-#### Apache HTTP Server
-- **Requests por segundo:** 850-1200 RPS
-- **Latencia promedio:** 12ms
-- **Uso de CPU:** 15-25%
-- **Memoria:** 128MB base + 50MB por 100 conexiones concurrentes
-
-#### Nginx
-- **Requests por segundo:** 2000-3500 RPS
-- **Latencia promedio:** 5ms
-- **Uso de CPU:** 8-12%
-- **Memoria:** 64MB base + 20MB por 100 conexiones concurrentes
-
-#### MySQL
-- **Queries por segundo:** 500-800 QPS
-- **Latencia promedio:** 2ms para SELECT, 5ms para INSERT
-- **Uso de CPU:** 20-35%
-- **Memoria:** 512MB buffer pool + overhead
-
-### Optimizaciones Aplicadas
-
-1. **Ajuste de buffer pool de MySQL:** Incrementado a 1GB para mejor caché
-2. **Worker processes de Nginx:** Configurados según núcleos de CPU disponibles
-3. **MaxRequestWorkers de Apache:** Ajustado según memoria disponible
-
----
-
 ## Troubleshooting y Resolución de Problemas Comunes
 
 ### Problema: Arreglo RAID Degradado
