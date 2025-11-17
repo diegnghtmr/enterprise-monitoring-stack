@@ -517,7 +517,7 @@ http://[IP_DEL_HOST]:19999
 
 El dashboard principal de Netdata proporciona métricas en tiempo real del servidor host:
 
-![Dashboard principal de Netdata](images/8.2.png)
+![Monitorización de contenedores](images/8.3.png)
 *Figura 28: Vista general del dashboard de Netdata mostrando métricas del sistema host*
 
 Métricas monitorizadas del host:
@@ -531,7 +531,7 @@ Métricas monitorizadas del host:
 
 Netdata detecta automáticamente y monitoriza todos los contenedores en ejecución:
 
-![Monitorización de contenedores](images/8.3.png)
+![Dashboard principal de Netdata](images/8.2.png)
 *Figura 29: Panel de monitorización específico de contenedores Docker mostrando Apache, Nginx y MySQL*
 
 Métricas por contenedor:
