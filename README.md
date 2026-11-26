@@ -789,3 +789,7 @@ enterprise-monitoring-stack/
 **Asignatura:** Infraestructura Computacional
 
 ---
+
+## License
+
+MIT, see [LICENSE](LICENSE).
